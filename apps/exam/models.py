@@ -13,6 +13,10 @@ class UserManager(models.Manager):
 			is_valid = False
 			errors.append('Usernames must have at least 3 characters. Please try again.')
 
+		if User.objects.get(username=post_data.get('username')):
+			is_valid = False
+			errors.append('That username is already taken. Please try again.')
+
 		if not re.search(r'^[a-z" "A-Z]+$', post_data.get('name')):
 			is_valid = False
 			errors.append('Name must be alphabetical characters only. Please try again.')

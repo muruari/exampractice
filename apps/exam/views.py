@@ -39,7 +39,7 @@ def login(request):
 		request.session['user_id'] = user.id
 		return redirect('/dashboard')
 	else: 
-		messages.add_message(request, messages.INFO, 'invalid credentials', extra_tags="login")
+		messages.add_message(request, messages.INFO, 'Your credentials are invalid! Please try again.', extra_tags="login")
 		return redirect('/')
 	return redirect('/dashboard')
 
