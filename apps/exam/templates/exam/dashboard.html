@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trips</title>
+    <style>
+            *{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+            }
+            #wrapper{
+                padding: 0px 25px;
+                width: 1000px;
+                height: auto;
+            }
+            #header h1{
+                display: inline-block;
+                margin: 20px 90px 10px 0px;
+           }
+           #header a{
+               font-size: 20px;
+           }
+
+        </style>
+    </head>
+<body>
+    <div id="header">
+        <h1>Welcome, {{ user.name }}!</h1>
+        <a href="/logout">Logout</a>
+    </div>
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+            {% if 'add_item' in message.tags %}
+                <p>{{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+</body>
+</html>
